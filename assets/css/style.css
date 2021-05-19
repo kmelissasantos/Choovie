@@ -1,31 +1,54 @@
-.searchbar {
-    margin: 1rem;
+* {
+    box-sizing: border-box;
+}
+
+
+.title-bar-left {
+    font-weight: bold;
+    font-size: 28px;
+}
+
+.hero {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background-size: cover;
+    background-position: 100% 0%;
+    background-image: url("../images/watchingtv.jpg");
+}
+
+.top-bar-center {
+    padding-top: 34px;
+}
+
+.categories {
+    padding-top: 50px;
+}
+
+.categories h2 {
+    padding-left: 30px;
+    padding-top: 50px;
+    color: #a2bead;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #ededed,
+             2px 2px 1px #ededed;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
   }
   
-  .search-field {
-    width: 0;
-    height: 40px;
-    margin-left: 1rem;
-    padding: 0;
-    border-radius: 50px;
-    border: none;
-    transition: all 0.5s ease;
+  @-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 10px #4c9a2a, 0 0 20px #4c9a2a, 0 0 30px #4c9a2a, 0 0 40px #4c9a2a, 0 0 50px #4c9a2a, 0 0 60px #4c9a2a, 0 0 70px #4c9a2a;
+    }
+    to {
+      text-shadow: 0 0 20px #acdf87, 0 0 30px #acdf87, 0 0 40px #acdf87, 0 0 50px #acdf87, 0 0 60px #acdf87, 0 0 70px #acdf87, 0 0 80px #acdf87;
+    }
   }
-  
-  .expand-search {
-    width: 80%;
-    max-width: calc(80% - 3rem);
-    border: 1px solid #c9c9c9;
-    padding: .5rem;
-  }
-  
-  svg {
-    width: 20px;
-    height: 20px;
-  }
-  
-  .button {
-    border-radius: 50px;
-  }
-  
-  
+
+.button {
+ margin-right: 35px
+}
+
+
+
