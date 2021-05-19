@@ -2,17 +2,6 @@
     box-sizing: border-box;
 }
 
-h2 {
-    color: #a2bead;
-    font-weight: bold;
-    text-shadow: 1px 1px 1px #ededed,
-             2px 2px 1px #ededed;
-    padding-top: 50px;
-}
-
-.data-sticky-container {
-    color: grey;
-}
 
 .title-bar-title {
     font-weight: bold;
@@ -20,7 +9,7 @@ h2 {
 }
 
 .hero {
-    height: 60vh;
+    height: 100vh;
     width: 100vw;
     position: relative;
     background-size: cover;
@@ -30,7 +19,6 @@ h2 {
 
 .top-bar-right {
     padding-top: 34px;
-  /*  max-width: 700px; */
 }
 
 .categories {
@@ -39,6 +27,11 @@ h2 {
 
 .categories h2 {
     padding-left: 30px;
+    padding-top: 50px;
+    color: #a2bead;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #ededed,
+             2px 2px 1px #ededed;
     -webkit-animation: glow 1s ease-in-out infinite alternate;
     -moz-animation: glow 1s ease-in-out infinite alternate;
     animation: glow 1s ease-in-out infinite alternate;
