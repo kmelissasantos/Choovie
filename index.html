@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.1/dist/css/foundation.min.css" integrity="sha256-1mcRjtAxlSjp6XJBgrBeeCORfBp/ppyX4tsvpQVCcpA= sha384-b5S5X654rX3Wo6z5/hnQ4GBmKuIJKMPwrJXn52ypjztlnDK2w9+9hSMBz/asy9Gw sha512-M1VveR2JGzpgWHb0elGqPTltHK3xbvu3Brgjfg4cg5ZNtyyApxw/45yHYsZ/rCVbfoO5MSZxB241wWq642jLtA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.6.3/css/foundation-float.min.css" integrity="sha512-tuBWy51BW5GZ5BfYddst4eq3d8mcnOk1I5ZHj45P5AUcf9yo5X3KmOJslloaM0ZoSDzS4lcGY91j3L1k5ZVuVg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./assets/css/style.css">
 
     <title>Movie Generator</title>
@@ -14,26 +14,23 @@
     <!-- Title Bar -->
   <header>
     <div data-sticky-container>
-      <div class="title-bar" data-sticky data-options="marginTop:0;">
-        <div class="title-bar-left">
-          <span class="title-bar-title">Movie Generator</span>
-        </div>
+      <div class="title-bar" data-sticky data-options="marginTop:0;" style="width:100%" data-top-anchor="1">
+        <div class="title-bar-left">Movie Generator</div>
         <div class="title-bar-right">
-          <ul class="dropdown menu align-right" data-dropdown-menu>
+          <ul class="menu align-right" menu>
             <li>
               <ul class="menu">
             <li><a href="#hero">Home</a></li>
             <li><a href="#">About</a></li>
           </ul>
         </header>
-    
-    
         </div>
       </div>
     </div>
     <!-- Hero Section -->
-  <section class="hero">
-    <div class="top-bar-right">
+ <div class="container">
+    <section class="hero">
+    <div class="top-bar-center">
       <form method="GET" action="">
           <span>
                <input type="text" align="middle" name="search" value=""placeholder="Search by Title">
@@ -47,7 +44,7 @@
            </span>
       </form>
   </div>
-   <div class="top-bar-right">
+   <div class="top-bar-center">
     <form method="GET" action="">
         <span>
             <input type="text" align="middle" name="search" value=""placeholder="Search by Actor">

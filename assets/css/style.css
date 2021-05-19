@@ -3,7 +3,7 @@
 }
 
 
-.title-bar-title {
+.title-bar-left {
     font-weight: bold;
     font-size: 28px;
 }
@@ -17,7 +17,7 @@
     background-image: url("../images/watchingtv.jpg");
 }
 
-.top-bar-right {
+.top-bar-center {
     padding-top: 34px;
 }
 
@@ -47,7 +47,7 @@
   }
 
 .button {
- margin: 0 10px 10px 10px;
+ margin-right: 35px
 }
 
 
