@@ -11,3 +11,5 @@ fetch("https://streaming-availability.p.rapidapi.com/search/basic?country=us&ser
 .catch(err => {
 	console.error(err);
 });
+
+//test
