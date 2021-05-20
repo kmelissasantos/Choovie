@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 // fetch("https://streaming-availability.p.rapidapi.com/search/basic?country=us&service=netflix&type=movie&genre=18&page=1&language=en", {
 // 	"method": "GET",
 // 	"headers": {
