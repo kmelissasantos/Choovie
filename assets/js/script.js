@@ -11,5 +11,33 @@
 // .catch(err => {
 // 	console.error(err);
 // });
+   
+//Search Title bar functionality
+var searchTitle = function (userMovie) {
+    
+    //fetch tmdb
+    fetch("https://api.themoviedb.org/3/movie/550?api_key=a1edf9a21ed595540b3cfea1a623b835")
+    .then(response => response.json())
+    .then(data => console.log(data));
   
-//test
+    var searchApiUrl = "https://api.themoviedb.org/3/movie/550?api_key=a1edf9a21ed595540b3cfea1a623b835&q=" + userMovie + "/";
+  
+  };    
+
+var formSubmitHandler = function(event) {
+    //Start Search By Title bar
+    var userInput = document.querySelector("#search-title");
+    // prevent page from refreshing
+  event.preventDefault();
+
+  // get value from input element
+  var userMovie = userInput.value.trim();
+  if (userMovie) {
+      searchTitle(userMovie);
+      //clear old content
+      userInput.value= "";
+  } else {
+      alert("Please enter a movie title!");
+  }
+};
+
