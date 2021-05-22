@@ -50,7 +50,9 @@ body{
   
 }
 
-
+.search-button {
+  margin-right: 15px;
+}
 
 .categories {
     padding-top: 40px;
