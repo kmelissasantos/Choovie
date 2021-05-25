@@ -35,10 +35,10 @@
           <h3>Search for Movies</h3>
           <div class="row columns">
             <label>
-              <input type="text" name="search-title" placeholder="Search by Title" id="search-title">
+              <input type="text" name="search-title" placeholder="Search by Title">
             </label>
           </div>
-          <button type="button" class="primary button search-button float-right" id="searchBtn">
+          <button type="button" class="primary button search-button float-right">
             Search
           </button>
           <div class="row columns">
@@ -71,6 +71,17 @@
    <div class="row">
       <div class="column medium-6">
          <div id="movies-list"></div>
+         <div class="card">
+           <div class="card-divider">
+          <h2   class="title"> Movies</h2>
+              <img id="movie-poster" class="card-img" src=""/>
+          </div>
+          <div class="card-body text-white">
+          <h2  class="card-title" id="title-movie"></h2>
+          <h3 class="card-text" id="rating-movie">Rating:</h3>
+          <h3 id="release-movie" class="card-text"></h3>
+          </div>
+        </div>
       </div>
    </div>
   </section>
