@@ -2,42 +2,77 @@
     box-sizing: border-box;
 }
 
+body{
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  background-size: cover;
+  background-position: 100% 0%;
+  background-image: url("../images/watchingtv.jpg");
+}
+
+.hero {
+  margin: 2rem;
+}
 
 .title-bar-left {
     font-weight: bold;
     font-size: 28px;
+    margin-left: 20px;
 }
 
-.hero {
-    height: 100vh;
-    width: 100vw;
-    position: relative;
-    background-size: cover;
-    background-position: 100% 0%;
-    background-image: url("../images/watchingtv.jpg");
+
+
+.translucent-form-overlay {
+  max-width: 800px;
+  width: 100%;
+  background-color: rgba(63, 63, 63, 0.6);
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
 }
 
-.top-bar-center {
-    padding-top: 34px;
+
+.columns.row {
+    display: block;
+  }
+
+  h3, label {
+    color: white;
+    text-align: center;
+  }
+  input, select {
+    color: dark-gray;
+  }
+  input::placeholder {
+    color: dark-gray;
+  
 }
 
+.search-button {
+  margin-right: 15px;
+}
 
 .categories {
-    padding-top: 50px;
+    padding-top: 40px;
 }
 
-.categories h2 {
-    padding-left: 30px;
-    padding-top: 50px;
-    color: #a2bead;
-    font-weight: bold;
-    text-shadow: 1px 1px 1px #ededed,
+.button-group {
+  padding-top: 40px;
+}
+
+.categories h3 {
+  color: #a2bead;
+  font-weight: bold;
+  font-size: 60px;
+  text-shadow: 1px 1px 1px #ededed,
              2px 2px 1px #ededed;
     -webkit-animation: glow 1s ease-in-out infinite alternate;
     -moz-animation: glow 1s ease-in-out infinite alternate;
     animation: glow 1s ease-in-out infinite alternate;
   }
-  
+
   @-webkit-keyframes glow {
     from {
       text-shadow: 0 0 10px #4c9a2a, 0 0 20px #4c9a2a, 0 0 30px #4c9a2a, 0 0 40px #4c9a2a, 0 0 50px #4c9a2a, 0 0 60px #4c9a2a, 0 0 70px #4c9a2a;
@@ -47,9 +82,28 @@
     }
   }
 
-.button {
- margin: 0 35px 10px 10px;
-}
-
-
-
+  .translucent-category-overlay {
+    max-width: 800px;
+    width: 100%;
+    background-color: rgba(63, 63, 63, 0.6);
+    padding: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+  }
+  
+  
+  .columns.row {
+      display: block;
+    }
+  
+    h3, label {
+      color: white;
+    }
+    input, select {
+      color: dark-gray;
+    }
+    input::placeholder {
+      color: dark-gray;
+    
+  }
