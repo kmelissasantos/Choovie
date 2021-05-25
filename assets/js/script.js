@@ -11,28 +11,36 @@
 // .catch(err => {
 // 	console.error(err);
 // });
+fetch("https://api.themoviedb.org/3/movie/550?api_key=a1edf9a21ed595540b3cfea1a623b835")
+.then(response => response.json())
+.then(data => console.log(data));
 
-//Dillin's Code
-var searchedTitle = document.querySelector('#search-title');
-var searchBtn = document.querySelector('#searchBtn');
+//Search Title bar functionality
+//var searchTitle = function (userMovie) {
+    
+    //fetch tmdb
+    
+  
+   // var searchApiUrl = "https://api.themoviedb.org/3/movie/550?api_key=a1edf9a21ed595540b3cfea1a623b835&q=" + userMovie + "/";
+  
+  //};    
 
-// Run Movie Search through API
+var formSubmitHandler = function(event) {
+    //Start Search By Title bar
+    var userInput = document.querySelector("#search-title");
+    // prevent page from refreshing
+  event.preventDefault();
 
-searchBtn.addEventListener('click', function getUserMovie() {
-  var userMovie = searchedTitle.value.trim();
-  console.log(userMovie);
-
-  fetch("https://api.themoviedb.org/3/search/movie?api_key=a1edf9a21ed595540b3cfea1a623b835&query=" + userMovie).then(repsonse => repsonse.json()).then(function(data) {
-      var movieName = data.results[0].name;
-      var movieId = data.results[0].id;
-      console.log(data, movieName, movieId);
-
-    return fetch("https://api.themoviedb.org/3/movie/" + movieId + "?api_key=a1edf9a21ed595540b3cfea1a623b835").then(repsonse => repsonse.json()).then(function(data) {
-      console.log(data);
-    });
-  });
-});
-//End Dillin's Code
+  // get value from input element
+  var userMovie = userInput.value.trim();
+  if (userMovie) {
+      searchTitle(userMovie);
+      //clear old content
+      userInput.value= "";
+  } else {
+      alert("Please enter a movie title!");
+  }
+};
 
 //EXAMPLE, 'SHAWSHANK REDEMPTION'
 let sourceID = "movie/278";
@@ -52,4 +60,3 @@ fetch("https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/idlooku
   });
 }
 getWhereToWatch()
-
