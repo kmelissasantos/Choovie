@@ -1,5 +1,3 @@
-
-
 //Dillin's Code
 var searchedTitle = document.querySelector('#search-title');
 var searchBtn = document.querySelector('#search-title-btn');
@@ -267,6 +265,7 @@ familyBtn.addEventListener('click', function getUserMovie() {
 
       for (let i = 0; i < 5; i++) {
             var movie = data.results[i];
+            var movieId = movie.id;
             console.log(data);
             var title = movie.title;
             var releaseDate = movie.release_date;
@@ -288,30 +287,33 @@ familyBtn.addEventListener('click', function getUserMovie() {
             document.querySelector('#movie-poster').setAttribute('src', imgUrl);
             };
 
+            
+
     });
               
 });
 
+//experiment for displaying multiple cards at once
+//function displayChoices() {
+  //var movieInfoArr = [{
+  //  title: movie.title
+ // },{
+ //   imgUrl: "https://image.tmdb.org/t/p/w500/" + movie.backdrop_path
+  //},{
+  //  releaseDate: movie.release_date
+  //}]
 
-function displayChoices() {
-  var movieInfoArr = [{
-    title: movie.title
-  },{
-    imgUrl: "https://image.tmdb.org/t/p/w500/" + movie.backdrop_path
-  },{
-    releaseDate: movie.release_date
-  }]
-
-  var row = document.querySelector('row');
-  var movieCard = document.querySelector("#container").createElement('div');
-  movieCard.classList.add('card');
-  row.appendChild(movieCard);
-  movieCard.appendChild(movieInfoArr);
+ // var row = document.querySelector('row');
+ // var movieCard = document.querySelector("#container").createElement('div');
+ // movieCard.classList.add('card');
+ // row.appendChild(movieCard);
+ // movieCard.appendChild(movieInfoArr);
 
 
-  console.log(movieInfoArr);
+ // console.log(movieInfoArr);
+
       
-}
+//}
 //End Dillin's Code
 
 //EXAMPLE, 'SHAWSHANK REDEMPTION'
@@ -330,8 +332,8 @@ function getWhereToWatch() {
       console.log(data);
     });
     });
-  }
+};
 
-  getWhereToWatch();
+getWhereToWatch();
 //getWhereToWatch()
 
