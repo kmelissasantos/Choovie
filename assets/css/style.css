@@ -3,7 +3,7 @@
 }
 
 body{
-  height: 150vh;
+  height: 160vh;
   width: 100vw;
   position: relative;
   background-size: cover;
@@ -15,7 +15,7 @@ body{
 
 /*dark mode*/
 main {
-  height: 150vh;
+  height: 160vh;
   width: 100vw;
   transition: background-color 0.3s ease;
   display: flex;
@@ -211,5 +211,41 @@ input:checked + .slider:before {
   .about {
     color: #000;
   }
+
+  .card {
+    border-radius: 6px;
+  }
   
- 
+  .card-divider {
+    background-color: #646464;
+ }
+
+ .title {
+  color: #7cb663;
+  font-size: larger;
+  font-weight: bold;
+  text-align: center;
+ }
+
+
+ @media only screen and (max-width: 550px) {
+
+  body{
+    height: auto;
+    width: auto;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+   /*dark mode*/
+  main {
+  height: auto;
+  width: auto;
+  }
+
+  .categories h3 {
+  font-size: 30px;
+  }
+
+}
