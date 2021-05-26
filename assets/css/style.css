@@ -3,13 +3,106 @@
 }
 
 body{
-  height: 100vh;
+  height: 160vh;
   width: 100vw;
   position: relative;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   background-position: 100% 0%;
   background-image: url("../images/watchingtv.jpg");
 }
+
+/*dark mode*/
+main {
+  height: 160vh;
+  width: 100vw;
+  transition: background-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content:first baseline;
+}
+
+main p {
+  margin-left: auto;
+  margin-right: 25px;
+  align-self: center;
+  font-family: sans-serif;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+/*toggle colors*/
+.dark { 
+  background-color: #2e2e42; background-color:rgba(12, 12, 24, 0.658);
+  color: #efefef;
+  
+}
+
+p {
+  background: none !important;
+}
+/* dark mood switch*/
+.switch {
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: 40px;
+  position: relative;
+  display: flex;
+  width: 40px;
+  height: 14px;
+  align-self: center;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #4c9a2a;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider {
+  border-radius: 30px;
+}
+
+.slider:before {
+  border-radius: 100%;
+}
+
+/* end of dark mode switch */
 
 .hero {
   margin: 2rem;
@@ -111,3 +204,48 @@ body{
       color: dark-gray;
     
   }
+
+  .lead {
+    color: #000;
+  }
+  .about {
+    color: #000;
+  }
+
+  .card {
+    border-radius: 6px;
+  }
+  
+  .card-divider {
+    background-color: #646464;
+ }
+
+ .title {
+  color: #7cb663;
+  font-size: larger;
+  font-weight: bold;
+  text-align: center;
+ }
+
+
+ @media only screen and (max-width: 550px) {
+
+  body{
+    height: auto;
+    width: auto;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+   /*dark mode*/
+  main {
+  height: auto;
+  width: auto;
+  }
+
+  .categories h3 {
+  font-size: 30px;
+  }
+
+}

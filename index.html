@@ -22,11 +22,18 @@
                 <a href="#" data-open="exampleModal1">About</a>
             </li>
           </ul>
+          
           </div>
         </div>
       </div>
     </div>
    </header>
+   <main id="main">
+    <label class="switch">
+      <input type="checkbox" onclick="darkLight()" id="checkBox" >
+      <span class="slider"></span>
+    </label>
+    <p>DARK🌑</p>
     <!-- Hero Section -->
  <div class="container">
     <section class="hero">
@@ -62,23 +69,22 @@
             </div>
           </div>
 
-          <!-- movie data will appear here-->
-          <div class="row">
-            <div class="column medium-6">
-              <div id="movies-list"></div>
-              <div class="card">
-                <div class="card-divider">
-                    <h2 class="title" id="title-movie"></h2>
-                    <img id="movie-poster" class="card-img"/>
+              <!-- movie data will appear here-->
+              <div class="row">
+                <div class="column medium-5">
+                  <div id="movies-list"></div>
+                  <div class="card">
+                    <div class="card-divider">
+                        <h2 class="title" id="title-movie"></h2>
+                    </div>
+                    <div class="card-body text-white">
+                      <img id="movie-poster" class="card-img"/>
+                      <h2  class="card-title"></h2>
+                      <h3 class="card-text" id="rating-movie"></h3>
+                      <h3  class="card-text" id="release-movie"></h3>
+                    </div>
+                  </div>
                 </div>
-                <div class="card-body text-white">
-                  <h2  class="card-title"></h2>
-                  <h3 class="card-text" id="rating-movie"></h3>
-                  <h3  class="card-text" id="release-movie"></h3>
-                </div>
-              </div>
-            </div>
-
             
             <div id="container"></div>
           </div>
@@ -87,16 +93,16 @@
       </div>
  
       </section>
+    </main>
   <!--About section-->
   <div class="reveal" id="exampleModal1" data-reveal>
     <h1>About Choovie! 🎬</h1>
       <p class="lead">We can help you find what to watch and where to watch it!</p>
-      <p>Choovie allows you to search and find that movie you have been wanting to watch or the movie you didn't think you needed. Randomize for those nights where you just can't seem to pick one! 🍿</p>
+      <p class="about">Choovie allows you to search and find that movie you have been wanting to watch or the movie you didn't think you needed. Randomize for those nights where you just can't seem to pick one! 🍿</p>
         <button class="close-button" data-close aria-label="Close modal" type="button">
           <span aria-hidden="true">&times;</span>
         </button>
   </div>
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"></script>
   <script src="./assets/js/script.js"></script>
