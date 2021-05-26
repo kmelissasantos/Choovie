@@ -39,10 +39,12 @@ searchBtn.addEventListener('click', function getUserMovie() {
             }]
 
             console.log(movieArr);
-            document.querySelector('#title-movie').textContent = title;
-            document.querySelector('#release-movie').textContent = releaseDate;
-            document.querySelector('#movie-poster').setAttribute('src', imgUrl);
+
             };
+
+            document.querySelector('#title-movie').textContent = title[i];
+            document.querySelector('#release-movie').textContent = releaseDate[i];
+            document.querySelector('#movie-poster').setAttribute('src', imgUrl[i]); 
 
     });
               
