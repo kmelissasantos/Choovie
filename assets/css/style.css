@@ -199,7 +199,8 @@ input::placeholder {
     }
   
     h3, label {
-      color: white;
+      color: black
+      ;
     }
     input, select {
       color: dark-gray;
