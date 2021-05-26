@@ -1,34 +1,41 @@
+// fetch("https://streaming-availability.p.rapidapi.com/search/basic?country=us&service=netflix&type=movie&genre=18&page=1&language=en", {
+// 	"method": "GET",
+// 	"headers": {
+// 		"x-rapidapi-key": "258d49d84fmsh463a70f9e397e14p11e540jsnb40dba07f201",
+// 		"x-rapidapi-host": "streaming-availability.p.rapidapi.com"
+// 	}
+// })
+// .then(response => {
+// 	console.log(response);
+// })
+// .catch(err => {
+// 	console.error(err);
+// });
 
-fetch("https://api.themoviedb.org/3/movie/550?api_key=a1edf9a21ed595540b3cfea1a623b835")
-.then(response => response.json())
-.then(data => console.log(data));
+//Dillin's Code
+var searchedTitle = document.querySelector('#search-title');
+var searchBtn = document.querySelector('#search-title-btn');
 
-//Search Title bar functionality
-//var searchTitle = function (userMovie) {
-    
-    //fetch tmdb
-    
-  
-   // var searchApiUrl = "https://api.themoviedb.org/3/movie/550?api_key=a1edf9a21ed595540b3cfea1a623b835&q=" + userMovie + "/";
-  
-  //};    
+// Run Movie Search through API
 
-var formSubmitHandler = function(event) {
-    //Start Search By Title bar
-    var userInput = document.querySelector("#search-title");
-    // prevent page from refreshing
-  event.preventDefault();
+searchBtn.addEventListener('click', function getUserMovie() {
+  var userMovie = searchedTitle.value.trim();
+  console.log(userMovie);
 
-  // get value from input element
-  var userMovie = userInput.value.trim();
-  if (userMovie) {
-      searchTitle(userMovie);
-      //clear old content
-      userInput.value= "";
-  } else {
-      alert("Please enter a movie title!");
-  }
-};
+  fetch("https://api.themoviedb.org/3/search/movie?api_key=a1edf9a21ed595540b3cfea1a623b835&query=" + userMovie).then(repsonse => repsonse.json()).then(function(data) {
+      var movieName = data.results[0].name;
+      var movieId = data.results[0].id;
+      console.log(data, movieName, movieId);
+
+    return fetch("https://api.themoviedb.org/3/movie/" + movieId + "?api_key=a1edf9a21ed595540b3cfea1a623b835").then(repsonse => repsonse.json()).then(function(data) {
+      console.log(data);
+    });
+  });
+});
+
+localStorage.setItem("searchHistory", "searched-title");
+
+//End Dillin's Code
 
 //EXAMPLE, 'SHAWSHANK REDEMPTION'
 let sourceID = "movie/278";
@@ -48,3 +55,29 @@ fetch("https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/idlooku
   });
 }
 getWhereToWatch()
+
+
+//storing and clearing local storage
+document.getElementById("searchBtn");
+////const getmovies = document
+
+//searchEl.addEventListener("click",function() {
+// const searchTerm = userInput.value;
+ // getmovies(searchTerm);
+ // moviesList.push(searchTerm);
+ // localStorage.setItem("searchBtn",JSON.stringify(moviesList));
+ // rendermoviesList();
+//})
+
+//clearEl.addEventListener("click",function() {
+  //moviesList = [];
+  //rendermoviesList();
+//})
+
+let darkMode = localStorage.getItem("darkMode");
+const darkModeToggle = document.querySelector("dark-mode-toggle");
+
+const enableDarkMode = () => {
+
+
+}
