@@ -40,9 +40,9 @@ searchBtn.addEventListener('click', function getUserMovie() {
 
             };
 
-            document.querySelector('#title-movie').textContent = title[i];
-            document.querySelector('#release-movie').textContent = releaseDate[i];
-            document.querySelector('#movie-poster').setAttribute('src', imgUrl[i]); 
+            document.querySelector('#title-movie').textContent = title;
+            document.querySelector('#release-movie').textContent = releaseDate;
+            document.querySelector('#movie-poster').setAttribute('src', imgUrl); 
 
     });
               
@@ -124,7 +124,7 @@ docuBtn.addEventListener('click', function getUserMovie() {
 
   fetch("https://api.themoviedb.org/3/search/movie?api_key=a1edf9a21ed595540b3cfea1a623b835&query=" + userMovie).then(repsonse => repsonse.json()).then(function(data) {
 
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < 4; i++) {
             var movie = data.results[i];
             console.log(data);
             var title = movie.title;
