@@ -1,16 +1,4 @@
-// fetch("https://streaming-availability.p.rapidapi.com/search/basic?country=us&service=netflix&type=movie&genre=18&page=1&language=en", {
-// 	"method": "GET",
-// 	"headers": {
-// 		"x-rapidapi-key": "258d49d84fmsh463a70f9e397e14p11e540jsnb40dba07f201",
-// 		"x-rapidapi-host": "streaming-availability.p.rapidapi.com"
-// 	}
-// })
-// .then(response => {
-// 	console.log(response);
-// })
-// .catch(err => {
-// 	console.error(err);
-// });
+
 
 //Dillin's Code
 var searchedTitle = document.querySelector('#search-title');
@@ -23,15 +11,48 @@ searchBtn.addEventListener('click', function getUserMovie() {
   console.log(userMovie);
 
   fetch("https://api.themoviedb.org/3/search/movie?api_key=a1edf9a21ed595540b3cfea1a623b835&query=" + userMovie).then(repsonse => repsonse.json()).then(function(data) {
-      var movieName = data.results[0].name;
-      var movieId = data.results[0].id;
-      console.log(data, movieName, movieId);
 
-    return fetch("https://api.themoviedb.org/3/movie/" + movieId + "?api_key=a1edf9a21ed595540b3cfea1a623b835").then(repsonse => repsonse.json()).then(function(data) {
-      console.log(data);
-    });
-  });
+      for (let i=0; i < 5; i++) {
+            var movieName = data.results[i].name;
+            var movieId = data.results[i].id;
+            var movie = data.results[i];
+            console.log(data, movieName, movieId);
+            var title = movie.title;
+            var releaseDate = movie.release_date;
+            var imgUrl = "https://image.tmdb.org/t/p/w500/" + movie.backdrop_path;
+            console.log(title, releaseDate, imgUrl);
+            document.querySelector('#title-movie').textContent = title;
+            document.querySelector('#release-movie').textContent = releaseDate;
+            document.querySelector('#movie-poster').setAttribute('src', imgUrl);
+
+            
+          };
+
+        console.log(data);
+
+        });
+        
 });
+
+function displayChoices() {
+  var movieInfoArr = [{
+    title: movie.title
+  },{
+    imgUrl: "https://image.tmdb.org/t/p/w500/" + movie.backdrop_path
+  },{
+    releaseDate: movie.release_date
+  }]
+
+  var row = document.querySelector('row');
+  var movieCard = document.querySelector("#container").createElement('div');
+  movieCard.classList.add('card');
+  row.appendChild(movieCard);
+  movieCard.appendChild(movieInfoArr);
+
+
+  console.log(movieInfoArr);
+      
+}
 //End Dillin's Code
 
 //EXAMPLE, 'SHAWSHANK REDEMPTION'
