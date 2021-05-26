@@ -26,9 +26,9 @@
         </div>
       </div>
     </div>
-   </header>
+  </header>
     <!-- Hero Section -->
- <div class="container">
+  <div class="container">
     <section class="hero">
       <div class="translucent-form-overlay">
         <form>
@@ -42,52 +42,57 @@
             Search
           </button>
          
-       </form>
+        </form>
       </div>      
 
     
             <!--Movie Category buttons--> 
       <div class="translucent-category-overlay">
-          <hr>
+        <hr>
 
           <div class="categories clearfix">
             <h3 class= separator-center>I'M IN THE MOOD FOR...</h3>
             <div class="button-group text-center">
-              <a type="comedy-button" class="button shadow success">COMEDY</a>
-              <a type="action-button" class="button shadow success">ACTION</a>
-              <a type="docu-button" class="button shadow success">DOCUMENTARY</a>
-              <a type="horror-button" class="button shadow success">HORROR</a>
-              <a type="sci-button" class="button shadow success">SCI-FI</a>
-              <a type="drama-button" class="button shadow success">DRAMA</a>
-              <a type="family-button" class="button shadow success">FAMILY</a>
+              <a id="comedy-button" class="button shadow success">COMEDY</a>
+              <a id="action-button" class="button shadow success">ACTION</a>
+              <a id="docu-button" class="button shadow success">DOCUMENTARY</a>
+              <a id="horror-button" class="button shadow success">HORROR</a>
+              <a id="scifi-button" class="button shadow success">SCI-FI</a>
+              <a id="drama-button" class="button shadow success">DRAMA</a>
+              <a id="family-button" class="button shadow success">FAMILY</a>
             </div>
           </div>
 
           <!-- movie data will appear here-->
-          <div class="row">
-            <div class="column medium-6">
+         <div class="row" id="row">
+          <div class="column medium-6">
               <div id="movies-list"></div>
               <div class="card">
                 <div class="card-divider">
                     <h2 class="title" id="title-movie"></h2>
-                    <img id="movie-poster" class="card-img"/>
                 </div>
-                <div class="card-body text-white">
+
+                <div class="card-body text-white" id="card-body">
+                  <img id="movie-poster" class="card-img"/>
                   <h2  class="card-title"></h2>
                   <h3 class="card-text" id="rating-movie"></h3>
                   <h3  class="card-text" id="release-movie"></h3>
                 </div>
               </div>
+                
+
             </div>
+          
 
             
-            <div id="container"></div>
+
           </div>
 
     
       </div>
  
-      </section>
+    </section>
+  </div>
   <!--About section-->
   <div class="reveal" id="exampleModal1" data-reveal>
     <h1>About Choovie! 🎬</h1>
@@ -113,7 +118,7 @@
        
        });
           
-      </script>
+  </script>
     
 </body>
 </html>

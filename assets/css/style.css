@@ -69,7 +69,6 @@ input::placeholder {
   -moz-animation: glow 1s ease-in-out infinite alternate;
   animation: glow 1s ease-in-out infinite alternate;
 }
-
 @-webkit-keyframes glow {
   from {
     text-shadow: 0 0 10px #4c9a2a, 0 0 20px #4c9a2a, 0 0 30px #4c9a2a,
@@ -97,7 +96,7 @@ input::placeholder {
 
 h3,
 label {
-  color: white;
+  color: black;
 }
 input,
 select {
@@ -105,4 +104,9 @@ select {
 }
 input::placeholder {
   color: dark-gray;
+}
+
+.card-body {
+  display: flex;
+  flex-wrap: wrap;
 }
