@@ -23,18 +23,48 @@ searchBtn.addEventListener('click', function getUserMovie() {
   console.log(userMovie);
 
   fetch("https://api.themoviedb.org/3/search/movie?api_key=a1edf9a21ed595540b3cfea1a623b835&query=" + userMovie).then(repsonse => repsonse.json()).then(function(data) {
-      var movieName = data.results[0].name;
-      var movieId = data.results[0].id;
-      console.log(data, movieName, movieId);
 
-    return fetch("https://api.themoviedb.org/3/movie/" + movieId + "?api_key=a1edf9a21ed595540b3cfea1a623b835").then(repsonse => repsonse.json()).then(function(data) {
-      console.log(data);
-    });
-  });
+      for (let i=0; i < 5; i++) {
+            var movieName = data.results[i].name;
+            var movieId = data.results[i].id;
+            var movie = data.results[i];
+            console.log(data, movieName, movieId);
+            var title = movie.title;
+            var releaseDate = movie.release_date;
+            var imgUrl = "https://image.tmdb.org/t/p/w500/" + movie.backdrop_path;
+            console.log(title, releaseDate, imgUrl);
+            document.querySelector('#title-movie').textContent = title;
+            document.querySelector('#release-movie').textContent = releaseDate;
+            document.querySelector('#movie-poster').setAttribute('src', imgUrl);
+
+            
+          };
+
+        console.log(data);
+
+        });
+        
 });
 
-localStorage.setItem("searchHistory", "searched-title");
+function displayChoices() {
+  var movieInfoArr = [{
+    title: movie.title
+  },{
+    imgUrl: "https://image.tmdb.org/t/p/w500/" + movie.backdrop_path
+  },{
+    releaseDate: movie.release_date
+  }]
 
+  var row = document.querySelector('row');
+  var movieCard = document.querySelector("#container").createElement('div');
+  movieCard.classList.add('card');
+  row.appendChild(movieCard);
+  movieCard.appendChild(movieInfoArr);
+
+
+  console.log(movieInfoArr);
+      
+}
 //End Dillin's Code
 
 //EXAMPLE, 'SHAWSHANK REDEMPTION'
@@ -56,28 +86,24 @@ fetch("https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/idlooku
 }
 getWhereToWatch()
 
+$('#main').toggleClass(localStorage.toggled);
 
-//storing and clearing local storage
-document.getElementById("searchBtn");
-////const getmovies = document
-
-//searchEl.addEventListener("click",function() {
-// const searchTerm = userInput.value;
- // getmovies(searchTerm);
- // moviesList.push(searchTerm);
- // localStorage.setItem("searchBtn",JSON.stringify(moviesList));
- // rendermoviesList();
-//})
-
-//clearEl.addEventListener("click",function() {
-  //moviesList = [];
-  //rendermoviesList();
-//})
-
-let darkMode = localStorage.getItem("darkMode");
-const darkModeToggle = document.querySelector("dark-mode-toggle");
-
-const enableDarkMode = () => {
-
-
+function darkLight() {
+  /*DARK CLASS*/
+  if (localStorage.toggled != 'dark') {
+    $('#main, p').toggleClass('dark', true);
+    localStorage.toggled = "dark";
+     
+  } else {
+    $('#main, p').toggleClass('dark', false);
+    localStorage.toggled = "";
+  }
 }
+
+/*Add 'checked' property to input if background == dark*/
+if ($('main').hasClass('dark')) {
+   $( '#checkBox' ).prop( "checked", true )
+} else {
+  $( '#checkBox' ).prop( "checked", false )
+}
+
