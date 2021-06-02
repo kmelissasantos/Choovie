@@ -1,5 +1,3 @@
-//
-
 //Dillin's Code
 var searchedTitle = document.querySelector('#search-title');
 var searchBtn = document.querySelector('#search-title-btn');
@@ -11,14 +9,40 @@ var scifiBtn = document.querySelector('#scifi-button');
 var dramaBtn = document.querySelector('#drama-button');
 var familyBtn = document.querySelector('#family-button');
 var row = document.querySelector('#row');
+var movieList = document.querySelector("#movies-list");
+
+//Create Card Function (BOB)
+function createCard(title, releaseDate, posterImg){
+  var cardContainer = document.createElement("div");
+  cardContainer.classList.add("card");
+  var cardDivider = document.createElement("div");
+  cardDivider.classList.add("card-divider");
+  var h2Title = document.createElement("h2");
+  h2Title.classList.add("title");
+  h2Title.textContent = title;
+  cardDivider.appendChild(h2Title);
+  var cardBody = document.createElement("div");
+  cardBody.classList.add("card-body");
+  cardBody.classList.add("text-white");
+  var img = document.createElement("img");
+  img.classList.add("card-img");
+  img.setAttribute('src', posterImg);
+  var h2Release = document.createElement("h3");
+  h2Release.classList.add("card-text");
+  h2Release.textContent = releaseDate;
+  cardBody.appendChild(img);
+  cardBody.appendChild(h2Release);
+  cardContainer.appendChild(cardDivider);
+  cardContainer.appendChild(cardBody);
+  movieList.appendChild(cardContainer);
+}
 
 // Run Movie Search through API
-
 //search by title
 searchBtn.addEventListener('click', function getUserMovie() {
   var userMovie = searchedTitle.value.trim();
   console.log(userMovie);
-
+  movieList.innerHTML = ""
   fetch("https://api.themoviedb.org/3/search/movie?api_key=a1edf9a21ed595540b3cfea1a623b835&query=" + userMovie).then(repsonse => repsonse.json()).then(function(data) {
 
       for (let i = 0; i < 5; i++) {
@@ -39,12 +63,11 @@ searchBtn.addEventListener('click', function getUserMovie() {
             }]
 
             console.log(movieArr);
-
+            // document.querySelector('#title-movie').textContent = movieArr.title;
+            // document.querySelector('#release-movie').textContent = releaseDate;
+            // document.querySelector('#movie-poster').setAttribute('src', imgUrl);
+            createCard(title, releaseDate, imgUrl);
             };
-
-            document.querySelector('#title-movie').textContent = title;
-            document.querySelector('#release-movie').textContent = releaseDate;
-            document.querySelector('#movie-poster').setAttribute('src', imgUrl); 
 
     });
               
@@ -54,7 +77,7 @@ searchBtn.addEventListener('click', function getUserMovie() {
 comedyBtn.addEventListener('click', function getUserMovie() {
   var userMovie = "comedy";
   console.log(userMovie);
-
+  movieList.innerHTML = ""
   fetch("https://api.themoviedb.org/3/search/movie?api_key=a1edf9a21ed595540b3cfea1a623b835&query=" + userMovie).then(repsonse => repsonse.json()).then(function(data) {
 
       for (let i = 0; i < 5; i++) {
@@ -75,9 +98,11 @@ comedyBtn.addEventListener('click', function getUserMovie() {
             }]
 
             console.log(movieArr);
-            document.querySelector('#title-movie').textContent = title;
-            document.querySelector('#release-movie').textContent = releaseDate;
-            document.querySelector('#movie-poster').setAttribute('src', imgUrl);
+            createCard(title, releaseDate, imgUrl);
+            // document.querySelector('#title-movie').textContent = title;
+            // document.querySelector('#release-movie').textContent = releaseDate;
+            // document.querySelector('#movie-poster').setAttribute('src', imgUrl);
+            // document.querySelector('.hide').classList.remove('hide');
             };
 
     });
@@ -88,7 +113,7 @@ comedyBtn.addEventListener('click', function getUserMovie() {
 actionBtn.addEventListener('click', function getUserMovie() {
   var userMovie = "action";
   console.log(userMovie);
-
+  movieList.innerHTML = ""
   fetch("https://api.themoviedb.org/3/search/movie?api_key=a1edf9a21ed595540b3cfea1a623b835&query=" + userMovie).then(repsonse => repsonse.json()).then(function(data) {
 
       for (let i = 0; i < 5; i++) {
@@ -109,9 +134,11 @@ actionBtn.addEventListener('click', function getUserMovie() {
             }]
 
             console.log(movieArr);
-            document.querySelector('#title-movie').textContent = title;
-            document.querySelector('#release-movie').textContent = releaseDate;
-            document.querySelector('#movie-poster').setAttribute('src', imgUrl);
+            createCard(title, releaseDate, imgUrl);
+            // document.querySelector('#title-movie').textContent = title;
+            // document.querySelector('#release-movie').textContent = releaseDate;
+            // document.querySelector('#movie-poster').setAttribute('src', imgUrl);
+            // document.querySelector('.hide').classList.remove('hide');
             };
 
     });
@@ -123,7 +150,7 @@ actionBtn.addEventListener('click', function getUserMovie() {
 docuBtn.addEventListener('click', function getUserMovie() {
   var userMovie = "documentaries";
   console.log(userMovie);
-
+  movieList.innerHTML = ""
   fetch("https://api.themoviedb.org/3/search/movie?api_key=a1edf9a21ed595540b3cfea1a623b835&query=" + userMovie).then(repsonse => repsonse.json()).then(function(data) {
 
       for (let i = 0; i < 4; i++) {
@@ -144,9 +171,11 @@ docuBtn.addEventListener('click', function getUserMovie() {
             }]
 
             console.log(movieArr);
-            document.querySelector('#title-movie').textContent = title;
-            document.querySelector('#release-movie').textContent = releaseDate;
-            document.querySelector('#movie-poster').setAttribute('src', imgUrl);
+            createCard(title, releaseDate, imgUrl);
+            // document.querySelector('#title-movie').textContent = title;
+            // document.querySelector('#release-movie').textContent = releaseDate;
+            // document.querySelector('#movie-poster').setAttribute('src', imgUrl);
+            // document.querySelector('.hide').classList.remove('hide');
             };
 
     });
@@ -157,7 +186,7 @@ docuBtn.addEventListener('click', function getUserMovie() {
 horrorBtn.addEventListener('click', function getUserMovie() {
   var userMovie = "horror";
   console.log(userMovie);
-
+  movieList.innerHTML = ""
   fetch("https://api.themoviedb.org/3/search/movie?api_key=a1edf9a21ed595540b3cfea1a623b835&query=" + userMovie).then(repsonse => repsonse.json()).then(function(data) {
 
       for (let i = 0; i < 5; i++) {
@@ -178,11 +207,12 @@ horrorBtn.addEventListener('click', function getUserMovie() {
             }]
 
             console.log(movieArr);
-            document.querySelector('#title-movie').textContent = title;
-            document.querySelector('#release-movie').textContent = releaseDate;
-            document.querySelector('#movie-poster').setAttribute('src', imgUrl);
+            createCard(title, releaseDate, imgUrl);
+            // document.querySelector('#title-movie').textContent = title;
+            // document.querySelector('#release-movie').textContent = releaseDate;
+            // document.querySelector('#movie-poster').setAttribute('src', imgUrl);
+            // document.querySelector('.hide').classList.remove('hide');
             };
-
     });
               
 });
@@ -192,7 +222,7 @@ horrorBtn.addEventListener('click', function getUserMovie() {
 scifiBtn.addEventListener('click', function getUserMovie() {
   var userMovie = "sci-fi";
   console.log(userMovie);
-
+  movieList.innerHTML = ""
   fetch("https://api.themoviedb.org/3/search/movie?api_key=a1edf9a21ed595540b3cfea1a623b835&query=" + userMovie).then(repsonse => repsonse.json()).then(function(data) {
 
       for (let i = 0; i < 5; i++) {
@@ -213,9 +243,11 @@ scifiBtn.addEventListener('click', function getUserMovie() {
             }]
 
             console.log(movieArr);
-            document.querySelector('#title-movie').textContent = title;
-            document.querySelector('#release-movie').textContent = releaseDate;
-            document.querySelector('#movie-poster').setAttribute('src', imgUrl);
+            createCard(title, releaseDate, imgUrl);
+            // document.querySelector('#title-movie').textContent = title;
+            // document.querySelector('#release-movie').textContent = releaseDate;
+            // document.querySelector('#movie-poster').setAttribute('src', imgUrl);
+            // document.querySelector('.hide').classList.remove('hide');
             };
 
     });
@@ -227,7 +259,7 @@ scifiBtn.addEventListener('click', function getUserMovie() {
 dramaBtn.addEventListener('click', function getUserMovie() {
   var userMovie = "drama";
   console.log(userMovie);
-
+  movieList.innerHTML = ""
   fetch("https://api.themoviedb.org/3/search/movie?api_key=a1edf9a21ed595540b3cfea1a623b835&query=" + userMovie).then(repsonse => repsonse.json()).then(function(data) {
 
       for (let i = 0; i < 5; i++) {
@@ -248,9 +280,11 @@ dramaBtn.addEventListener('click', function getUserMovie() {
             }]
 
             console.log(movieArr);
-            document.querySelector('#title-movie').textContent = title;
-            document.querySelector('#release-movie').textContent = releaseDate;
-            document.querySelector('#movie-poster').setAttribute('src', imgUrl);
+            createCard(title, releaseDate, imgUrl);
+            // document.querySelector('#title-movie').textContent = title;
+            // document.querySelector('#release-movie').textContent = releaseDate;
+            // document.querySelector('#movie-poster').setAttribute('src', imgUrl);
+            // document.querySelector('.hide').classList.remove('hide');
             };
 
     });
@@ -262,7 +296,7 @@ dramaBtn.addEventListener('click', function getUserMovie() {
 familyBtn.addEventListener('click', function getUserMovie() {
   var userMovie = "family";
   console.log(userMovie);
-
+  movieList.innerHTML = ""
   fetch("https://api.themoviedb.org/3/search/movie?api_key=a1edf9a21ed595540b3cfea1a623b835&query=" + userMovie).then(repsonse => repsonse.json()).then(function(data) {
 
       for (let i = 0; i < 5; i++) {
@@ -284,9 +318,11 @@ familyBtn.addEventListener('click', function getUserMovie() {
             }]
 
             console.log(movieArr);
-            document.querySelector('#title-movie').textContent = title;
-            document.querySelector('#release-movie').textContent = releaseDate;
-            document.querySelector('#movie-poster').setAttribute('src', imgUrl);
+            createCard(title, releaseDate, imgUrl);
+            // document.querySelector('#title-movie').textContent = title;
+            // document.querySelector('#release-movie').textContent = releaseDate;
+            // document.querySelector('#movie-poster').setAttribute('src', imgUrl);
+            // document.querySelector('.hide').classList.remove('hide');
             };
 
             
