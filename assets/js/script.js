@@ -45,7 +45,7 @@ searchBtn.addEventListener('click', function getUserMovie() {
   movieList.innerHTML = ""
   fetch("https://api.themoviedb.org/3/search/movie?api_key=a1edf9a21ed595540b3cfea1a623b835&query=" + userMovie).then(repsonse => repsonse.json()).then(function(data) {
 
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < 5 && i < data.results.length; i++) {
             var movie = data.results[i];
             console.log(data);
             var title = movie.title;
@@ -80,7 +80,7 @@ comedyBtn.addEventListener('click', function getUserMovie() {
   movieList.innerHTML = ""
   fetch("https://api.themoviedb.org/3/search/movie?api_key=a1edf9a21ed595540b3cfea1a623b835&query=" + userMovie).then(repsonse => repsonse.json()).then(function(data) {
 
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < 5 && i < data.results.length; i++) {
             var movie = data.results[i];
             console.log(data);
             var title = movie.title;
@@ -116,7 +116,7 @@ actionBtn.addEventListener('click', function getUserMovie() {
   movieList.innerHTML = ""
   fetch("https://api.themoviedb.org/3/search/movie?api_key=a1edf9a21ed595540b3cfea1a623b835&query=" + userMovie).then(repsonse => repsonse.json()).then(function(data) {
 
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < 5 && i < data.results.length; i++) {
             var movie = data.results[i];
             console.log(data);
             var title = movie.title;
@@ -153,7 +153,7 @@ docuBtn.addEventListener('click', function getUserMovie() {
   movieList.innerHTML = ""
   fetch("https://api.themoviedb.org/3/search/movie?api_key=a1edf9a21ed595540b3cfea1a623b835&query=" + userMovie).then(repsonse => repsonse.json()).then(function(data) {
 
-      for (let i = 0; i < 4; i++) {
+      for (let i = 0; i < 5 && i < data.results.length; i++) {
             var movie = data.results[i];
             console.log(data);
             var title = movie.title;
@@ -189,7 +189,7 @@ horrorBtn.addEventListener('click', function getUserMovie() {
   movieList.innerHTML = ""
   fetch("https://api.themoviedb.org/3/search/movie?api_key=a1edf9a21ed595540b3cfea1a623b835&query=" + userMovie).then(repsonse => repsonse.json()).then(function(data) {
 
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < 5 && i < data.results.length; i++) {
             var movie = data.results[i];
             console.log(data);
             var title = movie.title;
@@ -225,7 +225,7 @@ scifiBtn.addEventListener('click', function getUserMovie() {
   movieList.innerHTML = ""
   fetch("https://api.themoviedb.org/3/search/movie?api_key=a1edf9a21ed595540b3cfea1a623b835&query=" + userMovie).then(repsonse => repsonse.json()).then(function(data) {
 
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < 5 && i < data.results.length; i++) {
             var movie = data.results[i];
             console.log(data);
             var title = movie.title;
@@ -262,7 +262,7 @@ dramaBtn.addEventListener('click', function getUserMovie() {
   movieList.innerHTML = ""
   fetch("https://api.themoviedb.org/3/search/movie?api_key=a1edf9a21ed595540b3cfea1a623b835&query=" + userMovie).then(repsonse => repsonse.json()).then(function(data) {
 
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < 5 && i < data.results.length; i++) {
             var movie = data.results[i];
             console.log(data);
             var title = movie.title;
@@ -299,7 +299,7 @@ familyBtn.addEventListener('click', function getUserMovie() {
   movieList.innerHTML = ""
   fetch("https://api.themoviedb.org/3/search/movie?api_key=a1edf9a21ed595540b3cfea1a623b835&query=" + userMovie).then(repsonse => repsonse.json()).then(function(data) {
 
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < 5 && i < data.results.length; i++) {
             var movie = data.results[i];
             var movieId = movie.id;
             console.log(data);
